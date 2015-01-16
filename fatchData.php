@@ -16,11 +16,14 @@ if ($_POST['page']) {
     $query_pag_data = "SELECT id,title,tag,time from news LIMIT $start, $per_page";
     $result_pag_data = $db->query($query_pag_data);
     $msg = "";
+    $article=array();
     while ($row = mysqli_fetch_array($result_pag_data, MYSQLI_ASSOC)) {
-        $msg = "<tr><td><a href='./show.php?id=".$row['id']."'  target='_blank'>" . $row['title'] . "</a></td><td>" . $row['tag'] . "</td><td>" .date('Y-m-d',strtotime($row['time'])) . "</td></tr>";
-        echo $msg;
+        $articleRow = array('id' =>$row['id'] ,'title'=>urlencode($row['title']),'tag'=>$row['tag'],'date'=>date('Y-m-d',strtotime($row['time'])) );
+        array_push($article,$articleRow);
     }
-    
+    $article_json = json_encode($article);
+    echo urldecode($article_json);
+
     //Total count
     $query_pag_num = "SELECT COUNT(*) AS count FROM news";
     $result_pag_num = $db->query($query_pag_num);
@@ -28,4 +31,3 @@ if ($_POST['page']) {
     $count = $row['count'];
     $no_of_paginations = ceil($count / $per_page);
 }
-?>
