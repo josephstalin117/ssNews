@@ -11,8 +11,8 @@
         <script src="public/js/scroll.js"></script>
     </head>
     <body class="container">
-        <table class="table table-responsive">
-            <caption>聚合新闻</caption>
+        <div class="table-responsive">
+        <table class="table">
             <thead>
                 <tr>
                     <th>新闻标题</th>
@@ -23,6 +23,7 @@
             <tbody id="wrapper">
             </tbody>
         </table>
+        </div>
         <div class="row"><button id="nextPage" class="btn btn-primary btn-block" role="button">下一页</button></div>
     </body>
 </html>
