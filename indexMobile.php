@@ -16,8 +16,11 @@
         <div data-role="page" id="mainList">
             <div data-role="panel" id="searchPanel"> 
                 <h2>搜索</h2>
-                <input type="text" id="searchContent" placeholder="搜索新闻..."/>
-                <a href="#searchListPage" id="search" class="ui-btn">搜索</a>
+                <input type="text" id="searchContent" placeholder="搜索新闻..." data-clear-btn="true"/>
+                <a href="#searchListPage" id="searchButton" class="ui-btn">搜索</a>
+                <div data-role="popup" id="insertNulled" class="ui-content">
+                    <p>请输入搜索内容</p>
+                </div>
             </div> 
             <div data-role="header">
                 <a href="#searchPanel" class="ui-btn ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left">搜索</a>
@@ -26,7 +29,8 @@
                 </h1>
             </div>
             <div data-role="content" id="content">
-                <ol data-role="listview" id="list"></ol><a href="#" class="ui-btn ui-btn-b" id="nextPage">加载更多</a>
+                <ol data-role="listview" id="list"></ol>
+                <a href="#" class="ui-btn ui-btn-b" id="nextPage">加载更多</a>
             </div>
         </div>
         <!-- search result list -->
