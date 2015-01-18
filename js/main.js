@@ -7,11 +7,12 @@ $(document).ready(function() {
     });
     //search the title
     $('#search').click(function() {
-        if ($('#searchContent').val()) {
+        if ($('#searchContent').val() != "") {
             console.log($('#searchContent').val());
             loadSearchData($('#searchContent').val());
         } else {
-            alert("请输入搜索内容");
+            console.log("empty");
+            $('#insertNulled').popup();
         }
     });
 });
