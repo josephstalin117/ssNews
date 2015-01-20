@@ -10,7 +10,7 @@
  $tag = $row[1];
  $time = date('Y-m-d', strtotime($row[2]));
  $url = $row[3];
- $content = $row[4];
+ $content=preg_replace('/600\)makesmallpic\(this,600,1800\);\">/', '', $row[4]);
  $likes=$row[5];
  $imageUrl=$row[6];
  echo $imageUrl;
