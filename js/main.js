@@ -1,19 +1,14 @@
 var pageIndex = 1;
-$(document).ready(function() {
+$(document).ready(function () {
     loadData(pageIndex);
-    $('#nextPage').click(function() {
+    $('#nextPage').click(function () {
         pageIndex++;
         loadData(pageIndex);
     });
     //search the title
-    $('#search').click(function() {
-        if ($('#searchContent').val() != "") {
-            console.log($('#searchContent').val());
-            loadSearchData($('#searchContent').val());
-        } else {
-            console.log("empty");
-            $('#insertNulled').popup();
-        }
+    $('#searchButton').click(function () {
+        console.log($('#searchContent').val());
+        loadSearchData($('#searchContent').val());
     });
 });
 // load the data
@@ -22,13 +17,13 @@ function loadData(page) {
         type: "POST",
         url: "fatchData.php",
         data: "page=" + page,
-        success: function(msg) {
+        success: function (msg) {
             var g_jsonstr = JSON.parse(msg);
             for (var k in g_jsonstr) {
                 $('#list').append('<li><a href="./showMobile.php?id=' + g_jsonstr[k]['id'] + '" class="ui-btn ui-btn-icon-right ui-icon-carat-r" rel="external"' + '">' + g_jsonstr[k]['title'] + '</a></li>');
             }
         },
-        error: function() {
+        error: function () {
             console.log("load fail");
         }
     });
@@ -39,13 +34,13 @@ function loadSearchData(searchData) {
         type: "POST",
         url: "fatchData.php",
         data: "search=" + searchData,
-        success: function(msg) {
+        success: function (msg) {
             var g_jsonstr = JSON.parse(msg);
             for (var k in g_jsonstr) {
                 $('#searchList').append('<li><a href="./showMobile.php?id=' + g_jsonstr[k]['id'] + '" class="ui-btn ui-btn-icon-right ui-icon-carat-r" rel="external"' + '">' + g_jsonstr[k]['title'] + '</a></li>');
             }
         },
-        error: function() {
+        error: function () {
             console.log("search fail");
         }
     });

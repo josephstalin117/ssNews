@@ -44,7 +44,7 @@ if (isset($_POST['id'])) {
 //to handle the seach
 if (isset($_POST['search'])) {
     $search = $_POST['search'];
-    $query_pag_data = "SELECT id,title from news where title like '%$search%'";
+    $query_pag_data = "SELECT id,title FROM news WHERE title LIKE '%".$search."%'";
     $result_pag_data = $db->query($query_pag_data);
     $article = array();
     while ($row = mysqli_fetch_array($result_pag_data, MYSQLI_ASSOC)) {
