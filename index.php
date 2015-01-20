@@ -8,7 +8,7 @@
         <script src="public/js/jquery/jquery.jscroll.min.js"></script>
         <script src="public/js/bootstrap/bootstrap.min.js"></script>
         <script src="public/js/jquery/jquery.min.map"></script>
-        <script src="public/js/scroll.js"></script>
+        <script src="./js/scroll.js"></script>
     </head>
     <body class="container">
         <div class="table-responsive">

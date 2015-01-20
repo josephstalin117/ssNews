@@ -13,7 +13,7 @@ if ($_POST['page']) {
     $last_btn = true;
     $start = $page * $per_page;
     $db->set_charset("utf8");
-    $query_pag_data = "SELECT id,title,tag,time from news LIMIT $start, $per_page";
+    $query_pag_data = "SELECT id,title,tag,time from news ORDER BY time DESC LIMIT $start, $per_page";
     $result_pag_data = $db->query($query_pag_data);
     $msg = "";
     while ($row = mysqli_fetch_array($result_pag_data, MYSQLI_ASSOC)) {
