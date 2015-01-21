@@ -9,7 +9,7 @@
         </script>
         <script src="./js/main.js" type="text/javascript">
         </script>
-        <title></title>
+        <title>聚合阅读</title>
     </head>
     <body>
         <!-- main page -->
@@ -22,11 +22,13 @@
                     <p>请输入搜索内容</p>
                 </div>
             </div> 
+            <!-- result list -->
             <div data-role="header">
                 <a href="#searchPanel" class="ui-btn ui-corner-all ui-shadow ui-icon-search ui-btn-icon-left">搜索</a>
                 <h1>
                 聚合阅读
                 </h1>
+                <a href="#" id="recycle" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-recycle ui-btn-icon-left">刷新</a>
             </div>
             <div data-role="content" id="content">
                 <ol data-role="listview" id="list"></ol>

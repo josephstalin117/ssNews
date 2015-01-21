@@ -10,6 +10,10 @@ $(document).ready(function () {
         console.log($('#searchContent').val());
         loadSearchData($('#searchContent').val());
     });
+    //reflash the list
+    $('#recycle').click(function(){
+        location.reload(false);
+    });
 });
 // load the data
 function loadData(page) {
