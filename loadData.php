@@ -13,11 +13,11 @@ if ($_POST['page']) {
     $last_btn = true;
     $start = $page * $per_page;
     $db->set_charset("utf8");
-    $query_pag_data = "SELECT id,title,tag,time from news ORDER BY time DESC LIMIT $start, $per_page";
+    $query_pag_data = "SELECT id,title,tag,time,likes from news ORDER BY time DESC LIMIT $start, $per_page";
     $result_pag_data = $db->query($query_pag_data);
     $msg = "";
     while ($row = mysqli_fetch_array($result_pag_data, MYSQLI_ASSOC)) {
-        $msg = "<tr><td><a href='./show.php?id=".$row['id']."'  target='_blank'>" . $row['title'] . "</a></td><td>" . $row['tag'] . "</td><td>" .date('Y-m-d',strtotime($row['time'])) . "</td></tr>";
+        $msg = "<tr><td><a href='./show.php?id=".$row['id']."'  target='_blank'>" . $row['title'] . "</a></td><td>" . $row['tag'] . "</td><td>" .date('Y-m-d',strtotime($row['time'])) . "</td><td>".$row['likes']."</td></tr>";
         echo $msg;
     }
     

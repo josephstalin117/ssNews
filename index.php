@@ -18,6 +18,7 @@
                     <th>新闻标题</th>
                     <th>来源</th>
                     <th>发布时间</th>
+                    <th>点赞数</th>
                 </tr>
             </thead>
             <tbody id="wrapper">
