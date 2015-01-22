@@ -17,7 +17,7 @@ if ($_POST['page']) {
     $result_pag_data = $db->query($query_pag_data);
     $msg = "";
     while ($row = mysqli_fetch_array($result_pag_data, MYSQLI_ASSOC)) {
-        $msg = "<tr><td><a href='./show.php?id=".$row['id']."'  target='_blank'>" . $row['title'] . "</a></td><td>" . $row['tag'] . "</td><td>" .date('Y-m-d',strtotime($row['time'])) . "</td><td>".$row['likes']."</td></tr>";
+        $msg = "<tr><td><a href='./show.php?id=".$row['id']."'  target='_blank'>" . $row['title'] . "</a></td><td>" . $row['tag'] . "</td><td>" .date('Y-m-d',strtotime($row['time'])) . "</td><td>".$row['likes']."</td><td><a href='delete.php?del=".$row['id']."' class='btn btn-danger'>删除</a></td></tr>";
         echo $msg;
     }
     
